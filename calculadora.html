@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Circuitos Elétricos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>CALCULADORA DE CIRCUITOS ELÉTRICOS <span id="power-led" class="led"></span></h1>
+        
+        <div class="display" id="display">
+            <div id="circuit-info">Configure os parâmetros e clique em CALCULAR.</div>
+            <div id="results" class="results"></div>
+        </div>
+        
+        <div class="control-panel">
+            <div class="panel-section">
+                <h2>CONFIGURAÇÃO DO CIRCUITO</h2>
+                
+                <label for="input-mode">Modo de Entrada:</label>
+                <select id="input-mode" onchange="toggleInputMode()">
+                    <option value="voltage">Tensão (V)</option>
+                    <option value="current">Corrente (A)</option>
+                </select>
+                
+                <div id="voltage-inputs">
+                    <label>Geradores (em série):</label>
+                    <div class="battery-inputs" id="battery-inputs">
+                        <div class="battery-item">
+                            <input type="number" class="battery-voltage" placeholder="Tensão (V)" min="0" step="0.1">
+                            <button class="remove-btn" onclick="removeBattery(this)">-</button>
+                        </div>
+                    </div>
+                    <button class="add-btn" onclick="addBattery()">+ Adicionar Gerador</button>
+                </div>
+                
+                <div id="current-input" style="display: none;">
+                    <label for="total-current">Corrente Total (A):</label>
+                    <input type="number" id="total-current" placeholder="Corrente em Amperes" min="0" step="0.1">
+                </div>
+                
+                <label for="resistor-type">Tipo de Associação:</label>
+                <select id="resistor-type">
+                    <option value="series">Série</option>
+                    <option value="parallel">Paralelo</option>
+                </select>
+            </div>
+            
+            <div class="panel-section">
+                <h2>RESISTORES</h2>
+                <div class="resistor-inputs" id="resistor-inputs">
+                    <div class="resistor-item">
+                        <input type="number" class="resistor-value" placeholder="Resistência (Ω)" min="0" step="0.1">
+                        <button class="remove-btn" onclick="removeResistor(this)">-</button>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addResistor()">+ Adicionar Resistor</button>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="action-btn" onclick="calculateCurrent()">CORRENTE</button>
+            <button class="action-btn" onclick="calculateVoltage()">TENSÃO</button>
+            <button class="action-btn" onclick="calculatePower()">POTÊNCIA</button>
+            <button class="action-btn" onclick="calculateAll()">TUDO</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
