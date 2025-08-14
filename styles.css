@@ -198,9 +198,13 @@ button {
 }
 
 .mode-info {
-    background-color: #ffffcc;
-    padding: 8px;
+    background-color: #3498db; /* Azul mais claro que a barra superior */
+    color: white;
+    font-weight: bold;
+    padding: 10px;
     border-radius: 4px;
-    margin-bottom: 10px;
-    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    border-left: 4px solid #2c3e50; /* Borda lateral azul escuro */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
