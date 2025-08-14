@@ -29,7 +29,7 @@ h1 {
     text-align: center;
     color: #444;
     text-shadow: 1px 1px 1px #999;
-    font-size: 24px;
+    font-size: 34px;
 }
 
 .control-panel {
@@ -177,12 +177,13 @@ button {
 
 .result-item strong {
     color: #4a6ea9;
+    font-size: 1.5em;
 }
 
 .mode-info {
-    background-color: #ffffcc;
+    background-color: #3a5e99;
     padding: 8px;
     border-radius: 4px;
     margin-bottom: 10px;
-    font-size: 0.9em;
+    font-size: 1.0em;
 }
